@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Airline Booking website</title>
+    @Styles.Render("~/content/css")
+    @Styles.Render("~/scripts/js")
+    @*scripts.Render("~/scripts/modernizr")*@
+</head>
+<body style="background:#00ff90;">
+   <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <div class="container-fluid">
+            @Html.ActionLink("𝒮𝒱𝒩 𝒜𝐼𝑅𝐿𝐼𝒩𝐸𝒮", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Home/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/contact">contact us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="flights">flights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Login/index">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup/index">Signup</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+@*    <div class="container body-content">*@
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    @*</div>
+*@
+    @Scripts.Render("~/content/bootstrap")
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    @RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        var myCarousel = document.querySelector('#myCarousel')
+        var carousel = new bootstrap.Carousel(myCarousel, {
+            interval: 2000,
+            wrap: false
+        })
+    </script>
+</body>
+</html>

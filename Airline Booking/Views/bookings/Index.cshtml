@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Airline_Booking.Controllers.booking>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.card_number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cvv)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.exp_mnth_year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.booking_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.flight.fname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.uname)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.card_number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cvv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.exp_mnth_year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.booking_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.flight.fname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.user.uname)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
